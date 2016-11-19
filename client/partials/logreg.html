@@ -1,0 +1,17 @@
+
+
+<div ng-controller='sessionController'>
+	<h3>QandA</h3>
+	<form name = "myForm" ng-submit='logReg()'>
+		<input type='text' name = "name" ng-model='newUser.name' ng-minlength = '3' required>
+		<input type='submit' value='Log in or Register'>
+	</form>
+
+<div ng-messages = "myForm.name.$error" ng-if='myForm.name.$dirty'>
+	<p ng-message = "minlength"> Name should be atleast 3 characters long</p>
+	<p ng-message = "required"> Name is required </p>
+</div>
+
+
+
+</div>

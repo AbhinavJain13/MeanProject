@@ -1,0 +1,20 @@
+<a href="#/dashboard">Home</a>
+<a href="#/question/$routeParams/newanswer">Answer this Question</a>
+<a href="#/logout">logout</a>
+
+
+<div ng-controller = "quesController">
+  <ul ng-repeat = "ques in questions">
+    <li>{{ques.ques}}</li>
+    <li>{{ques.des}}</li>
+  <ul ng-repeat = "ans in ques._ans">
+    <li>{{ans._user.name}}</li>
+    <li> {{ans.ans}} </li>
+    <li>{{ans.details}}</li>
+  <hr>
+  </ul>
+
+  </ul>
+
+
+</div>

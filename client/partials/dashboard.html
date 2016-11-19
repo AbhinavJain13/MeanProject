@@ -1,0 +1,28 @@
+
+<div ng-controller = sessionController>
+  Hi {{sessionUsers.name}}
+  <a href="/logout">Logout</a>
+</div>
+
+<a href="#/newQues">Ask a Question</a>
+
+<div ng-controller = "quesController">
+<input type="text" ng-model="search" placeholder="Search">
+
+<table>
+  <thead>
+    <th>  Question  </th>
+    <th>  Answers </th>
+    <th>  Action
+    </th>
+  </thead>
+
+
+  <tbody ng-repeat = "ques in questions | filter : search ">
+    <td> {{ques.ques}} </td>
+    <td> count </td>
+    <td><a href="#/question/{{ques._id}}">Show</a>
+        <a href="#/question/{{ques._id}}/newanswer">Answer</a></td>
+  </tbody>
+</table>
+</div>

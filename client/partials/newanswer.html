@@ -1,0 +1,19 @@
+<a href="#/dashboard">Home</a>
+<a href="#/dashboard">Go Back to Question</a>
+<a href="#/logout">Logout</a>
+<div ng-controller = "sessionController">
+
+
+  <div ng-controller = "ansController">
+    <form name = "ansForm">
+      Your Answer: <textarea name="ans" ng-model = "newAns.ans" rows="5" cols="40" ng-minlength = "5"></textarea>
+      Details(optional): <textarea name="details" ng-model = "newAns.details" rows="5" cols="40"></textarea>
+      <input type="submit" name="can" value="Cancel">
+      <input type="submit" name="sub" value="Submit" ng-click = "addAns($routeParams.id)">
+    </form>
+
+    <div ng-messages = "ansForm.ans.$error" ng-if ="ansForm.ans.$dirty">
+      <p ng-message = "minlength"> Answer should be atleast 5 characters long</p>
+    </div>
+  </div>
+</div>
